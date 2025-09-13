@@ -5,6 +5,7 @@ import { connectDB } from "./config/db.js";
 import authRouter from "./routes/authRouter.js";
 import jwt from "jsonwebtoken";
 import workflowRouter from "./routes/workflowRouter.js";
+import credentialsRouter from "./routes/credentialsRouter.js";
 dotenv.config();
 
 declare global {
@@ -25,6 +26,7 @@ connectDB();
 
 app.use("/user", authRouter);
 app.use("/workflow", workflowRouter);
+app.use("/credentials", credentialsRouter);
 
 app.get("/verify", (req, res) => {
   const token = req.query.token as string | undefined;
