@@ -1,1 +1,1 @@
-{"root":["./src/server.ts","./src/config/db.ts"],"version":"5.9.2"}
+{"root":["./src/server.ts","./src/config/db.ts","./src/config/mail.ts","./src/routes/authrouter.ts","./src/schemas/userschema.ts"],"version":"5.9.2"}
