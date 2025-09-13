@@ -15,7 +15,7 @@ authRouter.post("/signin", async (req, res) => {
       return res.status(400).json({ message: "User does not exist." });
     }
     const token = jwt.sign(
-      { email: user.email },
+      { id: user.id, email: user.email },
       process.env.JWT_SECRET as string
     );
     const url = `http://localhost:5000/verify?token=${token}`;
@@ -44,7 +44,10 @@ authRouter.post("/signup", async (req, res) => {
       email: email,
       password: password,
     });
-    const token = jwt.sign({ email: email }, process.env.JWT_SECRET as string);
+    const token = jwt.sign(
+      { id: id, email: email },
+      process.env.JWT_SECRET as string
+    );
     const url = `http://localhost:5000/verify?token=${token}`;
     await sendMail(url, email);
 

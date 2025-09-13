@@ -4,12 +4,14 @@ import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 import authRouter from "./routes/authRouter.js";
 import jwt from "jsonwebtoken";
+import workflowRouter from "./routes/workflowRouter.js";
 dotenv.config();
 
 declare global {
   namespace Express {
     interface Request {
       user?: any;
+      headers?: any;
     }
   }
 }
@@ -22,6 +24,7 @@ const PORT = 5000;
 connectDB();
 
 app.use("/user", authRouter);
+app.use("/workflow", workflowRouter);
 
 app.get("/verify", (req, res) => {
   const token = req.query.token as string | undefined;
