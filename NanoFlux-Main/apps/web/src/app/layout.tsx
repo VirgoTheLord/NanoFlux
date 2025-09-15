@@ -13,6 +13,11 @@ const colmeak = localFont({
   variable: "--font-colmeak",
 });
 
+const hellosin = localFont({
+  src: "./fonts/Hellosin Demo.ttf",
+  variable: "--font-hellosin",
+});
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -31,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${colmeak.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${colmeak.variable} ${hellosin.variable} antialiased`}
       >
         {children}
       </body>

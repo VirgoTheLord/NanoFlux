@@ -1,5 +1,7 @@
-import { TextUpdaterNode } from "@/components/Nodes/TextUpdaterNode";
+import { ManualTrigger } from "@/components/Nodes/TriggerNodes/ManualTrigger";
+import { WebhookTrigger } from "@/components/Nodes/TriggerNodes/WebhookTrigger";
 
 export const nodeTypes = {
-  textUpdater: TextUpdaterNode,
+  manualTrigger: ManualTrigger,
+  webhook: WebhookTrigger,
 };
